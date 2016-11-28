@@ -17,5 +17,6 @@
     "vue-bulma-card",
     "card"
   ],
+  "author": "Luventa",
   "license": "MIT"
 }
