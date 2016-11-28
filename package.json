@@ -1,0 +1,21 @@
+{
+  "name": "vue-bulma-card",
+  "version": "1.0.0",
+  "description": "Card component for Vue Bulma",
+  "main": "src/index.js",
+  "peerDependencies": {
+    "bulma": "^0.2",
+    "vue": ">=2.0.0-beta.0"
+  },
+  "scripts": {},
+  "repository": "git@github.com:vue-bulma/card.git",
+  "keywords": [
+    "vue",
+    "bulma",
+    "vue-bulma",
+    "vue-bulma-component",
+    "vue-bulma-card",
+    "card"
+  ],
+  "license": "MIT"
+}
