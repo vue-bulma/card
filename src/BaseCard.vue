@@ -11,29 +11,17 @@
     <div class="card is-fullwidth">
       <header class="card-header">
         <p class="card-header-title">{{ title }}</p>
+        <a class="card-header-icon" v-if="!!this.icon">
+          <span class="icon">
+            <i class="fa" :class="[`fa-${icon}`]"></i>
+          </span>
+        </a>
       </header>
       <div class="card-content">
         <div class="content">{{ content }}</div>
       </div>
-      <footer class="card-footer">
-        <a class="card-footer-item" :href="action.href" v-if="action.href" v-for="action in actions">
-          <span class="icon is-small" v-if="action.icon">
-            <i class="fa" :class="[`fa-${action.icon}`]" aria-hidden="true"></i>
-          </span>&nbsp;&nbsp;
-          {{ action.text }}
-        </a>
-        <a class="card-footer-item" @click="action.click" v-if="action.click" v-for="action in actions">
-          <span class="icon is-small" v-if="action.icon">
-            <i class="fa" :class="[`fa-${action.icon}`]" aria-hidden="true"></i>
-          </span>&nbsp;&nbsp;
-          {{ action.text }}
-        </a>
-        <router-link class="card-footer-item" :to="{ name: action.name }" v-if="action.name" v-for="action in actions">
-          <span class="icon is-small" v-if="action.icon">
-            <i class="fa fa-link" :class="[`fa-${action.icon}`]" aria-hidden="true"></i>
-          </span>&nbsp;&nbsp;
-          {{ action.text }}
-        </router-link>
+      <footer class="card-footer" v-if="!!this.$slots.footer">
+        <slot name="footer"></slot>
       </footer>
     </div>
   </transition>
@@ -45,17 +33,8 @@ export default {
     title: {
       type: String
     },
+    icon: String,
     content: String,
-    actions: {
-      type: Array,
-      default: () => {
-        return [{
-          text: 'OK',
-          icon: 'check',
-          click: () => { console.log('OK clicked') }
-        }]
-      }
-    },
     transition: {
       type: String,
       default: 'fade'
