@@ -1,6 +1,6 @@
 {
   "name": "vue-bulma-card",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Card component for Vue Bulma",
   "main": "src/index.js",
   "peerDependencies": {
